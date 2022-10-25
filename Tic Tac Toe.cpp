@@ -140,42 +140,34 @@ bool gameOver(char board[][COLS])
 bool playerWins(char board[][COLS], char symbol)
 {
     // Check the first horizontal row.
-    if (board[0][0] == symbol && board[0][1] == symbol &&
-        board[0][2] == symbol)
+    if (board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol)
         return true;
 
     // Check the second horizontal row.
-    if (board[1][0] == symbol && board[1][1] == symbol &&
-        board[1][2] == symbol)
+    if (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol)
         return true;
 
     // Check the third horizontal row.
-    if (board[2][0] == symbol && board[2][1] == symbol &&
-        board[2][2] == symbol)
+    if (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol)
         return true;
 
     // Check the first column.
-    if (board[0][0] == symbol && board[1][0] == symbol &&
-        board[2][0] == symbol)
+    if (board[0][0] == symbol && board[1][0] == symbol && board[2][0] == symbol)
         return true;
 
     // Check the second column.
-    if (board[0][1] == symbol && board[1][1] == symbol &&
-        board[2][1] == symbol)
+    if (board[0][1] == symbol && board[1][1] == symbol && board[2][1] == symbol)
         return true;
 
     // Check the third column.
-    if (board[0][2] == symbol && board[1][2] == symbol &&
-        board[2][2] == symbol)
+    if (board[0][2] == symbol && board[1][2] == symbol && board[2][2] == symbol)
         return true;
 
     // Check the diagonal
-    if (board[0][0] == symbol && board[1][1] == symbol &&
-        board[2][2] == symbol)
+    if (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol)
         return true;
 
-    if (board[0][2] == symbol && board[1][1] == symbol &&
-        board[2][0] == symbol)
+    if (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol)
         return true;
 
     return false;
