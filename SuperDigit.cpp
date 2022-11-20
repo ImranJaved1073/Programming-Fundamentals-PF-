@@ -50,13 +50,16 @@
 
 using namespace std;
 
-int superDigit(string n, int k) {
+int superDigit(string n, int k) 
+{
 	int sum = 0;
-	for (int i = 0; i < n.length(); i++) {
+	for (int i = 0; i < n.length(); i++) 
+	{
 		sum += (n[i] - 48);
 	}
 	sum *= k;
-	if (sum < 10) {
+	if (sum < 10) 
+	{
 		return sum;
 	}
 	return superDigit(to_string(sum), 1);
