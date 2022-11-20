@@ -85,12 +85,13 @@ int main() {
         t2--;
     }
 	
-	cout << "______________________________________________________" << endl;
+    cout << "______________________________________________________" << endl;
     cout << "                     OUTPUT                          " << endl;
     cout << "______________________________________________________" << endl;
     t2 = t;
     int t3 = t;
-    while (t3!=0) {
+    while (t3!=0) 
+    {
         bool flag = false;
         for (int i = t2-1; i < t2 && t2!=0; i++)
         {
@@ -116,17 +117,20 @@ int main() {
             cout << endl;
             t2--;
         }
-        t3--;
-       
+        t3--;   
     }
+	
     for (int i = 0; i < t; i++)
     {
         delete[]arr[i];
         arr[i] = nullptr;
     }
+	
     delete[]arr;
     arr = nullptr;
-	delete[]k;
-	k = nullptr;
+	
+    delete[]k;
+    k = nullptr;
+	
     return 0;
 }
