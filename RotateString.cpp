@@ -43,35 +43,35 @@
 
  string leftRotateString(string s, int n)
  {
-	 string temp = s.substr(0, n);
-	 s.erase(0, n);
-	 s += temp;
-	 return s;
+	string temp = s.substr(0, n);
+	s.erase(0, n);
+	s += temp;
+	return s;
  }
 
  int main()
  {
      int N;
-	 cout << "How many strings do you want to enter? ";
+     cout << "How many strings do you want to enter? ";
      cin >> N;
      string* s = new string[N];
      for (int i = 0; i < N; i++)
      {
-		 cout << "Enter string " << i + 1 << ": ";
+         cout << "Enter string " << i + 1 << ": ";
          cin >> s[i];
-	 }
-	 for (int i = 0; i < N; i++)
-	 {
-		 for (int j = 0; j < s[i].length(); j++)
-		 {
-			 s[i] = leftRotateString(s[i], 1);
+     }
+     for (int i = 0; i < N; i++)
+     {
+     	for (int j = 0; j < s[i].length(); j++)
+	{
+	     s[i] = leftRotateString(s[i], 1);
              cout << s[i] << " ";
-		 }
-         cout << endl;
-	 }
-	 delete[] s;
-	 s = nullptr;
-	 return 0;
-
+	}
+     cout << endl;
+     }
+     delete[] s;
+     s = nullptr;
+	 
+     return 0;
  }
  
