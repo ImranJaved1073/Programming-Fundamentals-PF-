@@ -53,33 +53,40 @@ using namespace std;
 
 int main() {
     int t,t2;
-    int n;
     cout << "______________________________________________________" << endl;
     cout << "                     INPUT                            " << endl;
     cout << "______________________________________________________" << endl;
     cout << "Enter test cases:";
     cin >> t;
-    int** arr = new int* [t];
     t2 = t;
+    int** arr = new int* [t];
 	int* k = new int[t];
+    int* n = new int[t];
     while (t2 != 0) 
     {
-        cout << "Enter size of Array:";
-        cin >> n;
         for (int i = t2 - 1; i < t2; i++)
         {
+            cout << "Enter size of Array(N):";
+            cin >> n[i];
+			if (n[i] < 1)
+			{
+                cout << "Invalid Input size of Array(N) must be greater than 1" << endl;
+				cout << "Enter size of Array(N):";
+				cin >> n[i];
+			}
             cout << "Enter repetition count(K):";
             cin >> k[i];
-            while (k[i] > n)
+            while (k[i] > n[i])
             {
                 cout << "Repetition count(K) must be less than or equal to size of Array(N):";
                 cin >> k[i];
             }
-            arr[i] = new int[n];
+            arr[i] = new int[n[i]];
         }
         for (int i = t2-1; i < t2; i++)
         {
-            for (int j = 0; j < n; j++)
+			cout << "Enter elements of Array " << t-i << ":  ";
+            for (int j = 0; j < n[i]; j++)
                 cin >> arr[i][j];
         }
         t2--;
@@ -91,13 +98,14 @@ int main() {
     t2 = t;
     int t3 = t;
     while (t3!=0) {
-        int flag = 0;
+        bool flag = false;
         for (int i = t2-1; i < t2 && t2!=0; i++)
         {
-            for (int a = 0 ; a < n; a++)
+			cout << "Test Case " << (t-i) << ":";
+            for (int a = 0 ; a < n[i]; a++)
             {
                 int count = 1;
-                for (int j=a+1; j < n; j++)
+                for (int j=a+1; j < n[i]; j++)
                 {
                     if (arr[i][a] == arr[i][j])
                     {
@@ -105,13 +113,13 @@ int main() {
                         arr[i][j] = -99;
                     }
                 }
-                if (count >= k[t2-1] && arr[i][a] != -99)
+                if (count >= k[t2-1] && arr[i][a] != -99 && a<n[i])
                 {
                     cout << arr[i][a] << " ";
-                    flag = 1;
+                    flag = true;
                 }
             }
-            if (flag == 0)
+            if (flag == false)
                 cout << "-1";
             cout << endl;
             t2--;
@@ -124,9 +132,15 @@ int main() {
         delete[]arr[i];
         arr[i] = nullptr;
     }
+	
     delete[]arr;
     arr = nullptr;
+	
 	delete[]k;
 	k = nullptr;
+	
+	delete[]n;
+	n = nullptr;
+	
     return 0;
 }
