@@ -60,7 +60,7 @@ int main() {
     cin >> t;
     t2 = t;
     int** arr = new int* [t];
-	int* k = new int[t];
+    int* k = new int[t];
     int* n = new int[t];
     while (t2 != 0) 
     {
@@ -68,12 +68,12 @@ int main() {
         {
             cout << "Enter size of Array(N):";
             cin >> n[i];
-			if (n[i] < 1)
-			{
-                cout << "Invalid Input size of Array(N) must be greater than 1" << endl;
-				cout << "Enter size of Array(N):";
-				cin >> n[i];
-			}
+	    if (n[i] < 1)
+	    {
+            	cout << "Invalid Input size of Array(N) must be greater than 1" << endl;
+		cout << "Enter size of Array(N):";
+		cin >> n[i];
+	    }
             cout << "Enter repetition count(K):";
             cin >> k[i];
             while (k[i] > n[i])
@@ -85,14 +85,14 @@ int main() {
         }
         for (int i = t2-1; i < t2; i++)
         {
-			cout << "Enter elements of Array " << t-i << ":  ";
+	    cout << "Enter elements of Array " << t-i << ":  ";
             for (int j = 0; j < n[i]; j++)
                 cin >> arr[i][j];
         }
         t2--;
     }
 	
-	cout << "______________________________________________________" << endl;
+    cout << "______________________________________________________" << endl;
     cout << "                     OUTPUT                          " << endl;
     cout << "______________________________________________________" << endl;
     t2 = t;
@@ -101,7 +101,7 @@ int main() {
         bool flag = false;
         for (int i = t2-1; i < t2 && t2!=0; i++)
         {
-			cout << "Test Case " << (t-i) << ":";
+	    cout << "Test Case " << (t-i) << ":";
             for (int a = 0 ; a < n[i]; a++)
             {
                 int count = 1;
@@ -124,9 +124,9 @@ int main() {
             cout << endl;
             t2--;
         }
-        t3--;
-       
+        t3--;  
     }
+	
     for (int i = 0; i < t; i++)
     {
         delete[]arr[i];
@@ -136,11 +136,11 @@ int main() {
     delete[]arr;
     arr = nullptr;
 	
-	delete[]k;
-	k = nullptr;
+    delete[]k;
+    k = nullptr;
 	
-	delete[]n;
-	n = nullptr;
+    delete[]n;
+    n = nullptr;
 	
     return 0;
 }
