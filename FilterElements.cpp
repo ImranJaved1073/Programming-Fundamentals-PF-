@@ -61,7 +61,7 @@ int main() {
     cin >> t;
     int** arr = new int* [t];
     t2 = t;
-	int* k = new int[t];
+    int* k = new int[t];
     while (t2 != 0) 
     {
         cout << "Enter size of Array:";
@@ -91,7 +91,7 @@ int main() {
     t2 = t;
     int t3 = t;
     while (t3!=0) {
-        int flag = 0;
+        bool flag = false;
         for (int i = t2-1; i < t2 && t2!=0; i++)
         {
             for (int a = 0 ; a < n; a++)
@@ -108,10 +108,10 @@ int main() {
                 if (count >= k[t2-1] && arr[i][a] != -99)
                 {
                     cout << arr[i][a] << " ";
-                    flag = 1;
+                    flag = true;
                 }
             }
-            if (flag == 0)
+            if (flag == false)
                 cout << "-1";
             cout << endl;
             t2--;
