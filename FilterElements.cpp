@@ -101,7 +101,7 @@ int main() {
         bool flag = false;
         for (int i = t2-1; i < t2 && t2!=0; i++)
         {
-	    cout << "Test Case " << (t-i) << ":";
+	    cout << "Test Case " << (t-i) << ":	 ";
             for (int a = 0 ; a < n[i]; a++)
             {
                 int count = 1;
